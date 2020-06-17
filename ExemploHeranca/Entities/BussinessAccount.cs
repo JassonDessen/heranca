@@ -2,29 +2,21 @@
 
 namespace ExemploHeranca.Entities
 {
-    class BussinessAccount
+    class BussinessAccount : Account
     {
-        public int Number { get; set; }
-        public string Holder { get; set; }
-        public double Balance { get; set; }
         public double LoanLimit { get; set; }
 
-        public BussinessAccount(int number, string holder, double balance, double loanLimit)
+        // Passando os parâmetros para a classe mãe
+        // O base serve para isso
+        public BussinessAccount(int number, string holder, double balance, double loanLimit) : 
+            base(number, holder, balance)
         {
-            Number = number;
-            Holder = holder;
-            Balance = balance;
             LoanLimit = loanLimit;
         }
 
-        public void Withdraw(double amount)
+        public void Loan(double amount)
         {
-            Balance -= amount;
-        }
-
-        public void Deposit(double amount)
-        {
-            Balance += amount;
+            
         }
     }
 }
