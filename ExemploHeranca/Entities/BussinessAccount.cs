@@ -1,10 +1,10 @@
-﻿using System;
-
-namespace ExemploHeranca.Entities
+﻿namespace ExemploHeranca.Entities
 {
+    // Herdando a classe Account
+    // : representa a herança
     class BussinessAccount : Account
     {
-        public double LoanLimit { get; set; }
+        public double LoanLimit { get; private set; }
 
         // Passando os parâmetros para a classe mãe
         // O base serve para isso
@@ -16,7 +16,10 @@ namespace ExemploHeranca.Entities
 
         public void Loan(double amount)
         {
-            
+            if (amount <= LoanLimit)
+            {
+                Balance += amount - 10.0;
+            }   
         }
     }
 }
