@@ -15,9 +15,10 @@ namespace ExemploHeranca.Entities
             Balance = balance;
         }
 
-        public void Withdraw(double amount)
+        // A palavra virtual permite que o método seja sobrescrito na subclasse.
+        public virtual void Withdraw(double amount)
         {
-            Balance -= amount;
+            Balance -= amount + 5.0;
         }
 
         public void Deposit(double amount)
